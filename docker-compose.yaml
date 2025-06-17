@@ -1,0 +1,16 @@
+
+services:
+  mongo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mongo_dev
+    env_file:
+      - .env
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 5

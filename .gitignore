@@ -1,0 +1,16 @@
+# Evita que arquivos sensíveis e desnecessários sejam versionados
+
+# Arquivos de ambiente
+.env
+.env.*
+
+# Docker
+docker-compose.override.yml
+
+# Dados de volumes locais (caso você use persistência futuramente)
+volumes/
+data/
+mongodata/
+
+# Logs e arquivos temporários
+*.lo*
